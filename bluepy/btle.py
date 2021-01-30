@@ -198,8 +198,8 @@ class Characteristic:
     def read(self, timeout=None):
         return self.peripheral.readCharacteristic(self.valHandle, timeout=timeout)
 
-    def write(self, val, withResponse=False):
-        return self.peripheral.writeCharacteristic(self.valHandle, val, withResponse)
+    def write(self, val, withResponse=False, timeout=None):
+        return self.peripheral.writeCharacteristic(self.valHandle, val, withResponse, timeout=timeout)
 
     def getDescriptors(self, forUUID=None, hndEnd=0xFFFF):
         if not self.descs:
